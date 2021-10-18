@@ -77,8 +77,7 @@ int main() {
 	time(&seed);
     irand((unsigned long)seed);
 
-    printf("First Diffie-Hellman Key exchange .... \n");
-
+    
     cinstr(p,primetext);
 
 	printf("Using p: %s", primetext);

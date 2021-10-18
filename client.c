@@ -28,12 +28,17 @@ void func(int sockfd) {
 
 
 		bigbits(160,a);
+		printf("\n1\n");
 		powltr(3,a,p,pa);
+		printf("\n2\n");
 		cotstr(pa,buff);
+		printf("\n3\n");
 		write(sockfd, buff, sizeof(buff));
+		printf("\n4\n");
 		bzero(buff, sizeof(buff));
-
+		printf("\n5\n");
 		read(sockfd, buff, sizeof(buff));
+		printf("\n6\n");
 		printf("Pb recieved from Bob: %s\n", buff);
 
 		cinstr(pb,buff);
@@ -66,6 +71,7 @@ int main() {
 		
 	time(&seed);
     irand((unsigned long)seed);
+	cinstr(p, primetext);
 
 	printf("Using p: %s", primetext);
 
