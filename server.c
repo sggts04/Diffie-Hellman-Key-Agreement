@@ -42,7 +42,7 @@ void func(int sockfd) {
 
 			powmod(pa,b,p,key);
     		cotnum(key,stdout);
-			printf("\n\BOB CALCULATED KEY: ");
+			printf("\n\nBOB CALCULATED KEY: ");
     		cotnum(key,stdout);
 			
 			int test;

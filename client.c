@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include "miracl.h"
 #include <time.h>
+#include <arpa/inet.h>
 #define MAX 10000
 #define PORT 8081
 #define SA struct sockaddr
@@ -25,11 +26,10 @@ void func(int sockfd) {
 		char temp;
 		temp = getchar();
 
-		printf("\Bob's offline calculation\n");        
+
 		bigbits(160,a);
 		powltr(3,a,p,pa);
 		cotstr(pa,buff);
-		state =1;
 		write(sockfd, buff, sizeof(buff));
 		bzero(buff, sizeof(buff));
 
