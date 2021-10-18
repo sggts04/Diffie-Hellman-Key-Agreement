@@ -31,7 +31,7 @@ void func(int sockfd) {
 		read(sockfd, buff, sizeof(buff));
 
 
-			printf("Pa recieved from Alice: %s\n", buff);
+			printf("\nPa recieved from Alice: %s\n", buff);
 			cinstr(pa,buff);
 			bzero(buff, MAX);
 
@@ -42,7 +42,7 @@ void func(int sockfd) {
 
 			powmod(pa,b,p,key);
     		cotnum(key,stdout);
-			printf("\n\nBOB CALCULATED KEY: ");
+			printf("\nBob's Calculated Key (Pa^b) = ");
     		cotnum(key,stdout);
 			
 			int test;
@@ -80,7 +80,7 @@ int main() {
     
     cinstr(p,primetext);
 
-	printf("Using p: %s", primetext);
+	printf("Using p = %s\n\n", primetext);
 
 	// socket create and verification
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -89,7 +89,7 @@ int main() {
 		exit(0);
 	}
 	else
-		printf("Socket successfully created..\n");
+		printf("Socket successfully created..\n\n");
 	bzero(&servaddr, sizeof(servaddr));
 
 	// assign IP, PORT
@@ -103,7 +103,7 @@ int main() {
 		exit(0);
 	}
 	else
-		printf("Socket successfully binded..\n");
+		printf("Socket successfully binded..\n\n");
 
 	// Now server is ready to listen and verification
 	if ((listen(sockfd, 5)) != 0) {
@@ -111,7 +111,7 @@ int main() {
 		exit(0);
 	}
 	else
-		printf("Bob listening..\n");
+		printf("Bob listening..\n\n");
 	len = sizeof(cli);
 
 	// Accept the data packet from client and verification
@@ -121,7 +121,7 @@ int main() {
 		exit(0);
 	}
 	else
-		printf("Alice joined...\n");
+		printf("Alice joined...\n\n");
 
 	// Function for chatting between client and server
 	func(connfd);

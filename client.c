@@ -28,22 +28,16 @@ void func(int sockfd) {
 
 
 		bigbits(160,a);
-		printf("\n1\n");
 		powltr(3,a,p,pa);
-		printf("\n2\n");
 		cotstr(pa,buff);
-		printf("\n3\n");
 		write(sockfd, buff, sizeof(buff));
-		printf("\n4\n");
 		bzero(buff, sizeof(buff));
-		printf("\n5\n");
 		read(sockfd, buff, sizeof(buff));
-		printf("\n6\n");
-		printf("Pb recieved from Bob: %s\n", buff);
+		printf("\nPb recieved from Bob = %s\n", buff);
 
 		cinstr(pb,buff);
 		powmod(pb,a,p,key);
-		printf("\n\nALICE CALCULATED KEY: ");
+		printf("\nAlice's Calculated Key (Pb^a) = ");
     	cotnum(key,stdout);
 		
 		if ((strncmp(buff, "exit", 4)) == 0) {
@@ -73,16 +67,16 @@ int main() {
     irand((unsigned long)seed);
 	cinstr(p, primetext);
 
-	printf("Using p: %s", primetext);
+	printf("Using p = %s\n\n", primetext);
 
 	// socket create and varification
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	if (sockfd == -1) {
-		printf("socket creation failed...\n");
+		printf("Socket creation failed...\n");
 		exit(0);
 	}
 	else
-		printf("Socket successfully created..\n");
+		printf("Socket successfully created..\n\n");
 	bzero(&servaddr, sizeof(servaddr));
 
 	// assign IP, PORT
