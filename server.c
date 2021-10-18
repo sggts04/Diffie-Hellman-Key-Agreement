@@ -42,7 +42,7 @@ void func(int sockfd) {
 
 			powmod(pa,b,p,key);
     		
-			printf("\nBob's Calculated Key (Pa^b % p) = ");
+			printf("\nBob's Calculated Key (Pa^b mod p) = ");
     		cotnum(key,stdout);
 			
 			int test;

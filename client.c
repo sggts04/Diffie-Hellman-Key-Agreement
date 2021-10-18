@@ -37,7 +37,7 @@ void func(int sockfd) {
 
 		cinstr(pb,buff);
 		powmod(pb,a,p,key);
-		printf("\nAlice's Calculated Key (Pb^a % p) = ");
+		printf("\nAlice's Calculated Key (Pb^a mod p) = ");
     	cotnum(key,stdout);
 		
 		if ((strncmp(buff, "exit", 4)) == 0) {
