@@ -41,7 +41,7 @@ void func(int sockfd) {
 			write(sockfd, buff, sizeof(buff));
 
 			powmod(pa,b,p,key);
-    		cotnum(key,stdout);
+    		
 			printf("\nBob's Calculated Key (Pa^b) = ");
     		cotnum(key,stdout);
 			
