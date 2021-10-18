@@ -11,7 +11,7 @@ Then run `./server` and `./client` on two separate terminals.
 
 ### Walkthrough
 
-We have implemented a client-server setup where the client acts as Alice, and server acts as another person Bob. Both of them know the public part of the key `p`, it has been pre-defined in the code as large 1024 bit prime but can be easily changed.
+We have implemented a client-server setup where the client acts as Alice, and server acts as another person Bob. Both of them know the public part of the keys `p` and `g`. `p` has been pre-defined in the code as large 1024 bit prime but can be easily changed and `g` is 3.
 
 Now we start running our server and the client attempts to connect to it.
 
@@ -25,15 +25,15 @@ Server Process (Bob):
 
 Now, just press enter on the Client(Alice) terminal to initiate the process.
 
-Alice generates a 160 bit random number `a` and uses it to generate `Pa = p^a`. Then sends it to Bob.
+Alice generates a 160 bit random number `a` and uses it to generate `Pa = 3^a % p`. Then sends it to Bob.
 
-Bob recieves `Pa` and at the same time, Bob generates a 160 bit random number `b` and uses it to generate `Pb = p^b`. Then sends it to Alice.
+Bob recieves `Pa` and at the same time, Bob generates a 160 bit random number `b` and uses it to generate `Pb = 3^b % p`. Then sends it to Alice.
 
 Then Alice and Bob use these to find the common key.
 
-For Alice: `Key = Pb^a`
+For Alice: `Key = Pb^a % p`
 
-For Bob: `Key = Pa^b`
+For Bob: `Key = Pa^b % p`
 
 Client Process (Alice):
 
