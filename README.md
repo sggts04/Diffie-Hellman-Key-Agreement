@@ -15,11 +15,11 @@ We have implemented a client-server setup where the client acts as Alice, and se
 
 Now we start running our server and the client attempts to connect to it.
 
-Client Process (Alice):
+Client Process **(Alice)**:
 
 ![](https://raw.githubusercontent.com/sggts04/Diffie-Hellman-Key-Agreement/master/screenshots/Alice-1.PNG)
 
-Server Process (Bob):
+Server Process **(Bob)**:
 
 ![](https://raw.githubusercontent.com/sggts04/Diffie-Hellman-Key-Agreement/master/screenshots/Bob-1.PNG)
 
@@ -29,18 +29,26 @@ Alice generates a 160 bit random number `a` and uses it to generate `Pa = 3^a % 
 
 Bob recieves `Pa` and at the same time, Bob generates a 160 bit random number `b` and uses it to generate `Pb = 3^b % p`. Then sends it to Alice.
 
+Client Process **(Alice)**:
+
+![](https://raw.githubusercontent.com/sggts04/Diffie-Hellman-Key-Agreement/master/screenshots/Alice-2.PNG)
+
+Server Process **(Bob)**:
+
+![](https://raw.githubusercontent.com/sggts04/Diffie-Hellman-Key-Agreement/master/screenshots/Bob-2.PNG)
+
 Then Alice and Bob use these to find the common key.
 
 For Alice: `Key = Pb^a % p`
 
 For Bob: `Key = Pa^b % p`
 
-Client Process (Alice):
+Client Process **(Alice)**:
 
-![](https://raw.githubusercontent.com/sggts04/Diffie-Hellman-Key-Agreement/master/screenshots/Alice-2.PNG)
+![](https://raw.githubusercontent.com/sggts04/Diffie-Hellman-Key-Agreement/master/screenshots/Alice-3.PNG)
 
-Server Process (Bob):
+Server Process **(Bob)**:
 
-![](https://raw.githubusercontent.com/sggts04/Diffie-Hellman-Key-Agreement/master/screenshots/Bob-2.PNG)
+![](https://raw.githubusercontent.com/sggts04/Diffie-Hellman-Key-Agreement/master/screenshots/Bob-3.PNG)
 
 As you can see, Alice and Bob have managed to achieve the same common key without using a KDC.
